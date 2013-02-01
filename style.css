@@ -25,32 +25,13 @@ body {
   font-size: 1em;
   line-height: 1.4;
 }
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
+
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
 }
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
 img {
   vertical-align: middle;
-}
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-textarea {
-  resize: vertical;
 }
 .chromeframe {
   margin: 0.2em 0;
@@ -70,14 +51,27 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@font-face {
+    font-family: 'Theano';
+    src: url('font/TheanoDidot-Regular-webfont.eot');
+    src: url('font/TheanoDidot-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/TheanoDidot-Regular-webfont.woff') format('woff'),
+         url('font/TheanoDidot-Regular-webfont.ttf') format('truetype'),
+         url('font/TheanoDidot-Regular-webfont.svg#TheanoDidotRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
-  font-size: 15px;
+  font-size: 100%;
   color: #000;
   background-color: #f7f7f7;
   margin: 0 auto;
   max-width: 1100px;
   min-width: 340px;
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-family: Georgia, serif;
+  line-height: 170%;
 }
 a {
   text-decoration: none;
@@ -88,7 +82,7 @@ a:hover {
   color: #0c0c66;
 }
 h1 {
-  font-family: 'Didot';
+  font-family: Didot, Theano,"Times New Roman", serif;
   font-weight: normal;
   font-size: 6em;
   text-transform: uppercase;
@@ -109,11 +103,12 @@ body>h1{
 }
 
 h2 {
-  font-family: 'Didot';
-  font-weight: normal;
+  font-family: Didot, Theano,"Times New Roman", serif;
+  font-weight: 100;
   font-size: 1.8em;
+  margin: 1.2em 0 0.3em 0;
   text-transform: uppercase;
-  margin: 1.5em 0 0.5em 0;
+  padding:0.2em 0;
 }
 #about {
   width: 48%;
@@ -121,12 +116,18 @@ h2 {
   margin-right: 4%;
 }
 #about h1 {
-  margin: 0 0 30px 0;
+  margin: 0 0 20px 0;
+  font-size: 5.6em;
 }
 #photoprofil {
   float: left;
   width:48%;
   margin-bottom: 50px;
+}
+
+#photoprofil img{
+	width:100%;
+	height:auto;
 }
 
 /******************Header*************************/
@@ -135,6 +136,10 @@ header{
 	margin-bottom: 20px;
 }
 
+header h1{
+	padding:0;
+	border:none;
+}
 
 #logo{
 	margin:0 auto;
@@ -149,41 +154,46 @@ header{
 	width:100%;
 	text-transform: uppercase;
 	margin-bottom: 20px;
-	font-family: 'Didot';
+	font-family: Didot, Theano,"Times New Roman", serif;
 	text-align: center;
 	font-size: 1.2em;
 }
 
-#nav{
+nav{
 	width:100%;
 }
 
-#nav ul{
-	margin:0 auto;
-	text-align: center;
-	padding-left: 0;
-	border-top: 1px solid #ababab;
-	border-bottom: 1px solid #ababab;
-	font-family: 'Didot';
-	font-size: 1.5em;
+nav h2{
+	display:none;
 }
 
-#nav ul li {
+nav ul{
+	margin:0 auto;
+	text-align: center;
+	border-top: 1px solid #ababab;
+	border-bottom: 1px solid #ababab;
+	font-family: Didot, Theano,"Times New Roman", serif;
+	font-size: 1.5em;
+	padding:5px 0 4px 0;
+}
+
+nav li {
 	display:inline;
 	text-transform: uppercase;
 }
 
-#nav ul li a{
+nav a{
 	padding:3px 40px;
 }
 
-#nav ul li a:hover{
+nav a:hover{
 	background-color: black;
 	color:white;
 }
 
-#nav ul li.current-menu-item{
-	text-decoration: line-through;
+.current-menu-item a{
+	background-color: black;
+	color:white;
 }
 
 /*****************galerie**************/
@@ -254,25 +264,29 @@ header{
 /*****************Contenu******************/
 .banniere {
   width: 100%;
+  height:auto;
 }
 section p {
   font-size: 1em;
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-family: Georgia, serif;
 }
 address {
   float: left;
   width: 48%;
-  font-family: 'Palatino';
+  font-family: Georgia, serif;
   font-size: 1.2em;
   text-align: center;
   line-height: 1.5em;
-  min-width: 525px;
   margin : 0 4% 50px 0;
 }
 address h1 {
   font-size: 4em;
   font-style: normal;
   margin-top: 0;
+}
+
+address iframe{
+	width:100%;
 }
 .email {
   text-decoration: underline;
@@ -283,11 +297,15 @@ address h1 {
 }
 iframe {
   margin-top: 10px;
+  width:100%;
+
 }
 
 
 #forms h2{
 	text-align: center;
+	padding:0.4em;
+	line-height: 130%;
 }
 
 /****************Footer*******************/
@@ -297,7 +315,7 @@ iframe {
   border-top: solid 1px #ababab;
   padding: 3em 0 1.5em 0;
   margin-top: 5em;
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-family: Georgia, serif;
 }
 
 #footer a {
@@ -311,7 +329,12 @@ iframe {
 #blog {
   width: 38em;
   margin: 0 auto ;
-  min-width: 320px;
+
+}
+
+#blog h1{
+	margin:0 32px;
+	padding:10px;
 }
 
 #blog article {
@@ -409,6 +432,7 @@ article img{
 	text-decoration: underline;
 }
 
+
 /***********************Formulaire*********************/
 label {
   display: block;
@@ -416,12 +440,17 @@ label {
   letter-spacing: 2px;
   z-index: 5000px;
 }
+
+#forms form{
+	width:45%;
+	float:right;
+}
 form {
   width: 506px;
   min-width: 340px;
   padding: 10px;
   float: left;
-  font-family: 'Palatino';
+  font-family: Georgia, serif;
   border: 1px solid #ababab;
 }
 
@@ -455,7 +484,7 @@ textarea:focus {
   float: right;
   color: #fff;
   background: #ababab;
-  font-family: 'Palatino';
+  font-family: Georgia, serif;
 }
 #submit:hover {
   opacity: 1;
@@ -464,14 +493,17 @@ textarea:focus {
 }
 ::-webkit-input-placeholder {
   color: #a5a5a5;
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-family: Georgia, serif;
 }
 :-moz-placeholder {
   color: #a5a5a5;
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-family: Georgia, serif;
 }
 
-
+.error-message{
+	display:none;
+	color:red;
+}
 
 #commentform {
 	width:80%;
@@ -512,6 +544,21 @@ textarea:focus {
  Ê-o-transition: all 600ms linear;
  Êtransition: all 600ms linear;
 }
+
+#erreur img{
+	display: block;
+	margin:0 auto;
+	width:50%;
+}
+
+#erreur p {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2em;
+	font-family: Didot, Theano,"Times New Roman", serif;
+}
+
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -519,7 +566,7 @@ textarea:focus {
 	/* zone de floue pour écrans < 17' */
 }
 
-@media only screen and (max-width: 768px) and (max-width: 959px) {
+@media only screen and (max-width: 768px) {
 	/* tablet mode portrait */
 	address{
 		margin: 0 auto;
@@ -533,14 +580,23 @@ textarea:focus {
 	
 	#about{
 		float:none;
-		width:528px;
-		margin: 0 auto 50px;
+		margin: 0 auto;
+		width:100%;
+		padding:0;
+	}
+	
+	#about h1{
+		width:100%;
+		font-size: 5em;
+		padding: 10px 0;
 	}
 	
 	#photoprofil{
 		float: none;
 		margin: 0 auto;
-		width:528px;
+		width:100%;
+		margin-top: 20px;
+		
 	}
 	
 	header {
@@ -561,46 +617,49 @@ textarea:focus {
 	margin-bottom: 20px;
 }
 
-#nav{
+nav{
 	width:100%;
 }
 
-#nav ul{
-	margin:0 auto;
-	text-align: center;
-	padding-left: 0;
-	border-top: 1px solid #ababab;
-	border-bottom: 1px solid #ababab;
-	font-family: Didot;
-	font-size: 1.5em;
+nav a{
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
-#nav ul li {
-	display:inline;
-	text-transform: uppercase;
-}
 
-#nav ul li a{
-	padding:3px 40px;
-}
-
-#nav ul li a:hover{
+nav a:hover{
 	background-color: black;
 	color:white;
 }
 
-#nav ul li.current-menu-item{
-	text-decoration: line-through;
+#blog{
+	width:100%;
 }
-	
+
+#blog h1{
+	margin:0;
+}
+
+#blog article{
+	padding:0 0 10px 0;
+}
+
+#adresse{
+	width:100%;
+}
+
+#forms form{
+	float:none;
+	width:80%;
+}
+#forms h2{
+	padding:0 10%;
+}
+
 	body {
 		padding: 0 10px;
-	}
-	
+}	
 }
-
-	
-
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 	/* smartphone et tablet en mode paysage */
@@ -641,11 +700,11 @@ textarea:focus {
 	margin-bottom: 20px;
 }
 
-#nav{
+nav{
 	width:100%;
 }
 
-#nav ul{
+nav ul{
 	margin:0 auto;
 	text-align: center;
 	padding-left: 0;
@@ -655,22 +714,19 @@ textarea:focus {
 	font-size: 1.5em;
 }
 
-#nav ul li {
+nav li {
 	display:inline;
 	text-transform: uppercase;
 }
 
-#nav ul li a{
-	padding:3px 40px;
-}
-
-#nav ul li a:hover{
+nav a:hover{
 	background-color: black;
 	color:white;
 }
 
-#nav ul li.current-menu-item{
-	text-decoration: line-through;
+.current-menu-item a{
+	background-color: black;
+	color:white;
 }
 	
 	body {
@@ -682,7 +738,7 @@ textarea:focus {
 	/* smartphone en mode portrait */
 	
 header{
-	height: 400px;
+	height: 410px;
 }
 
 #logo{
@@ -700,12 +756,15 @@ header{
 	margin-bottom: 20px;
 }
 
-#nav{
+#work{
+	padding:10px 0;
+}
+nav{
 	width:100%;
 	margin-bottom: 44px;
 }
 
-#nav ul{
+nav ul{
 	margin:0 auto;
 	text-align: center;
 	padding-left: 0;
@@ -715,28 +774,37 @@ header{
 	font-size: 1.8em;
 }
 
-#nav ul li {
+nav li {
 	display:block;
 	text-transform: uppercase;
-	padding-top: 15px;
+	padding: 8px 0;
+	margin:10px;
 }
 
-#nav ul li a{
+nav a{
 	padding:3px 40px;
 }
 
-#nav ul li a:hover{
-	background-color: black;
-	color:white;
+#container{
+	width:100%;
 }
 
-#nav ul li.current-menu-item{
-	text-decoration: line-through;
+#container article{
+	width:100%;
+}
+
+#container img{
+	width:100%;
+	height:auto;
 }
 
 #about{
 	width:320px;
 	height:auto;
+}
+
+#about h1{
+	font-size: 3.2em;
 }
 
 #photoprofil{
@@ -746,16 +814,18 @@ header{
 #photoprofil img{
 	width: 100%;
 	height:auto;
-}
-#about h1{
-	font-size: 4.5em;
 }	
 
 #blog{
 	width:100%;
 }
 
-#blog h2 a, #blog h2{
+#blog h1{
+	margin:0;
+	padding:10px;
+}
+
+#blog a, #blog h2{
 	background-color: #000000;
 	color:#fff;
 	border:none;
@@ -764,13 +834,14 @@ header{
 	width:100%;
 	height:auto;
 }
-#blog iframe{
-	width:100%;
-	height:auto;
-}
 
 #blog article{
 	padding: 0 0 15px;;
+}
+
+#blog iframe{
+	width:100%;
+	height: auto;
 }
 
 #adresse {
@@ -814,7 +885,7 @@ address{
 	width:100%;
 	height:auto;
 }
-#blog img,.masonry article img{
+#blog img,.masonry img{
 	width:100%;
 	height:auto;
 }
@@ -827,8 +898,9 @@ address{
 	min-width: 250px;
 
 }
-
-
+section h1{
+	font-size: 4em;
+}
 }
 
 
