@@ -287,6 +287,7 @@ address h1 {
 
 address iframe{
 	width:100%;
+
 }
 .email {
   text-decoration: underline;
@@ -379,7 +380,8 @@ article img{
 }
 
 #respond form{
-	width:490px;
+	width:100%;
+	box-sizing: border-box;
 }
 
 .form-submit #submit{
@@ -401,6 +403,10 @@ article img{
 
 #commentform{
 	float:none;
+	width:100%;
+	padding:0;
+	text-align: center;
+	box-sizing: border-box;
 }
 
 .required{
@@ -446,12 +452,11 @@ label {
 	float:right;
 }
 form {
-  width: 506px;
-  min-width: 340px;
   padding: 10px;
   float: left;
   font-family: Georgia, serif;
   border: 1px solid #ababab;
+  box-sizing: border-box;
 }
 
 input,
@@ -476,7 +481,7 @@ input:focus,
 textarea:focus {
   border: 1px solid #97d6eb;
 }
-#submit {
+#submit, #contactForm button[type="submit"] {
   width: 30%;
   height: 38px;
   margin-top: 20px;
@@ -486,7 +491,7 @@ textarea:focus {
   background: #ababab;
   font-family: Georgia, serif;
 }
-#submit:hover {
+#submit:hover, #contactForm button[type="submit"]:hover {
   opacity: 1;
   background-color: #ababab;
   background-color: #000000;
@@ -506,8 +511,8 @@ textarea:focus {
 }
 
 #commentform {
-	width:80%;
-	
+	width:100%;
+	box-sizing: border-box;
 }
 
 #pnpost{
@@ -558,7 +563,14 @@ textarea:focus {
 	font-family: Didot, Theano,"Times New Roman", serif;
 }
 
+.error{
+	display: block;
+	color:#EE0000;
+}
 
+.thanks{
+	text-align:center;
+}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -841,7 +853,7 @@ nav a{
 
 #blog iframe{
 	width:100%;
-	height: auto;
+
 }
 
 #adresse {
@@ -893,9 +905,9 @@ address{
 #respond form{
 	width:100%;
 	margin:0;
-	padding: 0;
+	padding: 10px;
 	border:none;
-	min-width: 250px;
+	box-sizing: border-box;
 
 }
 section h1{

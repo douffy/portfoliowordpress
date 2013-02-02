@@ -12,7 +12,7 @@
     		</div>
     	</footer>
     	
-        <script src="<?php bloginfo('template_directory') ?>/js/main.min.js"></script> 
+        <script src="<?php bloginfo('template_directory') ?>/js/main.js"></script> 
         
     </body>
 </html>
